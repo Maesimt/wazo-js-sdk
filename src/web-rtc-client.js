@@ -382,7 +382,7 @@ export default class WebRTCClient extends Emitter {
   }
 
   getContactIdentifier() {
-    return this.userAgent ? `${this.userAgent.configuration.contactName}/${this.userAgent.contact.uri}` : null;
+    return this.userAgent ? `${this.userAgent.configuration.authorizationUser}/${this.userAgent.contact.uri}` : null;
   }
 
   close() {
