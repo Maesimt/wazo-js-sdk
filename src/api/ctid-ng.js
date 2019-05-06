@@ -72,8 +72,7 @@ export default (client: ApiRequester, baseUrl: string) => ({
     }
 
     if (contact) {
-      const trick = `${contact.split('@')[0]  }@127.0.0.1:34464;${  contact.split('@')[1].split(';')[1]}`
-      body.location.contact = trick.substr(1, trick.length);
+      body.location.contact = contact.substr(1, contact.length);
     }
 
     return client.post(`${baseUrl}/users/me/relocates`, body, token);
