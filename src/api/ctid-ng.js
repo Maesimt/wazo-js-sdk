@@ -123,4 +123,14 @@ export default (client: ApiRequester, baseUrl: string) => ({
 
     return client.post(`${baseUrl}/users/me/faxes?${params}`, fax, headers);
   },
+
+  createTransfer(token: Token, initialCallId: string, toExtension: string, blind: boolean) {
+    const body: Object = {
+      exten: toExtension,
+      flow: blind ? 'blind' : 'attended',
+      initiator_call: initialCallId,
+    };
+
+    return client.post(`${baseUrl}/users/me/transfers`, body, token);
+  },
 });
