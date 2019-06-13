@@ -139,6 +139,6 @@ export default (client: ApiRequester, baseUrl: string) => ({
   },
 
   completeTransfer(token: Token, id: string) {
-    return client.put(`${baseUrl}/users/me/transfers/${id}`, null, token);
+    return client.put(`${baseUrl}/users/me/transfers/${id}/complete`, null, token);
   },
 });
