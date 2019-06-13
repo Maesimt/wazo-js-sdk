@@ -133,4 +133,12 @@ export default (client: ApiRequester, baseUrl: string) => ({
 
     return client.post(`${baseUrl}/users/me/transfers`, body, token);
   },
+
+  cancelTransfer(token: Token, id: string) {
+    return client.delete(`${baseUrl}/users/me/transfers/${id}`, null, token);
+  },
+
+  completeTransfer(token: Token, id: string) {
+    return client.put(`${baseUrl}/users/me/transfers/${id}`, null, token);
+  },
 });
