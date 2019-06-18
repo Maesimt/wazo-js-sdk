@@ -147,6 +147,7 @@ WebSocketClient.eventLists = [
   'fax_outbound_user_created',
   'fax_outbound_user_succeeded',
   'fax_outbound_user_failed',
+  'transfer_updated',
 ];
 
 export default WebSocketClient;
